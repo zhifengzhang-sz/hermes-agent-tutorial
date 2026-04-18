@@ -16,7 +16,9 @@ Supported platforms out of the box:
 - **WhatsApp** — via Baileys bridge (Node deps required)
 - **Signal** — via `signal-cli`
 - **Email** — for async / batch workflows
+- **SMS** — via an SMS gateway service (`sms` extra)
 - **Home Assistant** — for smart-home triggers (if you run Home Assistant on your network, Hermes can call services and read entity states as native tools, and can be reached via HA automations; configuration is outside this tutorial's scope — see the [official Home Assistant docs for Hermes](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/homeassistant) for setup)
+- **Additional specialized platforms** — DingTalk, Feishu, WeCom (+ callback variant), Weixin, BlueBubbles, QQBot. Each ships as its own pip extra (e.g., `dingtalk`, `feishu`); see the [official gateway docs](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/) for the full matrix and setup instructions.
 
 All of them run under a single `hermes gateway` process — one command, many surfaces.
 

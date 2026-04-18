@@ -115,7 +115,7 @@ hermes config set model.default "mistralai/mistral-nemo"     # cheapest reliable
 
 ### Picking a model
 
-OpenRouter currently offers ~17 free-tier models with ≥64K context and tool-use, and many cheap paid models. Our picks:
+OpenRouter currently offers ~17 free-tier models with ≥64K context and tool-use, and many cheap paid models (count observed 2026-04-18 via the OpenRouter `/models` API; inventory drifts, so re-query for current state). Our picks:
 
 - **`mistralai/mistral-nemo`** — cheapest paid option with tool-use and ≥64K context at the time of writing. A single verification turn is fractions of a cent. Well-suited to Hermes's orchestration-style work.
 - **`qwen/qwen3-235b-a22b-2507`** — flagship Qwen3 MoE, stronger tool-use than smaller models. Slightly more expensive but more reliable for complex agent flows. Recommended if you plan to use [scenario 3 (delegation)](#scenario-3-openrouter--claude-code-delegation).

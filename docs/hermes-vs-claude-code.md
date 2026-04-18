@@ -12,12 +12,12 @@ If you already use [Claude Code](https://docs.claude.com/en/docs/claude-code) da
 
 These are verified features (either against the Hermes source or against a live install):
 
-- **Messaging gateways.** Talk to the agent from Telegram, Discord, Slack, WhatsApp, Signal, Email, SMS, and ~10 more platforms. Useful when you're commuting, in a meeting, away from your keyboard, or on your phone. Claude Code has no equivalent.
+- **Messaging gateways.** Talk to the agent from Telegram, Discord, Slack, WhatsApp, Signal, Email, SMS, Home Assistant, plus ~7 specialized platforms (DingTalk, Feishu, WeCom + Callback, Weixin, BlueBubbles, QQBot). Useful when you're commuting, in a meeting, away from your keyboard, or on your phone. Claude Code has no equivalent.
 - **Scheduled tasks (cron).** Natural-language scheduling: *"every weekday at 8am, summarize yesterday's git commits and send me the result on Telegram."* Stored as JSON at `~/.hermes/cron/jobs.json`, re-read every tick. Claude Code has no built-in scheduler.
 - **Multi-provider credential pools with rotation.** Register multiple keys across providers; Hermes automatically fails over on rate limits or billing errors. Claude Code is single-provider (Anthropic).
 - **Remote terminal backends.** Hermes can execute its shell commands on a remote SSH host, inside Docker, on Modal serverless, on Daytona sandboxes, or on Singularity HPC clusters — not just locally. Useful for "agent reachable from anywhere, work happens on a cloud VM" setups.
 - **Android / Termux support.** First-class `.[termux]` install path. You can run the agent on your phone.
-- **Broader bundled skill library.** A fresh install comes with ~75 skills spanning smart home, media, research, MLOps, social, productivity, etc. — not just coding. Claude Code's bundled library is smaller and more coding-centric.
+- **Broader bundled skill library.** A fresh install comes with ~75 skills spanning smart home, media, research, MLOps, social, productivity, etc. — not just coding (live-observed on 2026-04-18; see REVIEW.md). Claude Code's bundled skills, by contrast, are more concentrated on coding-related workflows — though an apples-to-apples inventory comparison isn't in this tutorial.
 - **Native Home Assistant / smart-home integration.** The agent can control smart-home devices as a native tool.
 - **Voice I/O.** Local speech-to-text (faster-whisper) and text-to-speech (Piper or ElevenLabs) ship as optional extras.
 - **Image generation tools.** Ship as a built-in toolset.

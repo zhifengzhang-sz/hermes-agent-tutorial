@@ -1,6 +1,6 @@
 # Hermes Agent — A Hands-On Tutorial
 
-> A guided tour of [Hermes Agent](https://hermes-agent.nousresearch.com) by Nous Research — from install, to your first conversation, to delegating coding tasks to Claude Code, to running a Telegram-driven autonomous assistant that never forgets.
+> A guided tour of [Hermes Agent](https://hermes-agent.nousresearch.com) by Nous Research — from install, to your first conversation, to delegating coding tasks to Claude Code, to running a Telegram-driven autonomous assistant that remembers across sessions.
 
 This is a **community tutorial**, not official documentation. Every chapter links back to the authoritative source on [hermes-agent.nousresearch.com](https://hermes-agent.nousresearch.com/docs/) or the [GitHub repo](https://github.com/NousResearch/hermes-agent). If something here conflicts with the official docs, the docs win.
 

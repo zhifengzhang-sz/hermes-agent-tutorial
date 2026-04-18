@@ -173,7 +173,7 @@ For very long sessions, `/compress` before each big task is a good habit.
 | `Alt+Enter` / `Ctrl+J` | New line |
 | `Ctrl+C` | Interrupt / second press exits |
 | `Ctrl+V` | Paste image (vision) |
-| `Ctrl+B` | Start/stop voice recording |
+| `Ctrl+B` | Start/stop voice recording (requires `voice` extra) |
 | `Ctrl+R` | Search history |
 | `Up` / `Down` | Scroll previous messages |
 | `Tab` (after `/`) | Autocomplete slash commands |

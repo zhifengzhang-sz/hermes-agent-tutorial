@@ -47,7 +47,7 @@ These aren't in the welcome banner, but you'll want them immediately:
 | `Ctrl+V` | Paste an image from clipboard (vision) |
 | `Ctrl+C` | Interrupt the current task |
 | `Tab` (after `/`) | Autocomplete slash commands |
-| `Ctrl+B` | Start a voice recording (if `voice` extra is installed) |
+| `Ctrl+B` | Start/stop voice recording (requires `voice` extra) |
 
 The interrupt behavior is the one most people miss: **you don't have to wait for Hermes to finish**. Type a new message and press Enter — it cancels the current task and switches to your new instructions mid-turn.
 

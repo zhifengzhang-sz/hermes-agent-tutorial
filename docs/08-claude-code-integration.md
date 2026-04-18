@@ -3,6 +3,8 @@
 > **Goal:** have Hermes delegate heavy coding work to Anthropic's [Claude Code](https://docs.claude.com/en/docs/claude-code/overview), orchestrating it as a sub-agent.
 >
 > **Official source:** [`skills/autonomous-ai-agents/claude-code/SKILL.md`](https://github.com/NousResearch/hermes-agent/blob/main/skills/autonomous-ai-agents/claude-code/SKILL.md) in the Hermes repo.
+>
+> **See also:** [LLM Provider Scenarios § 3 (OpenRouter + Claude Code delegation)](llm-provider-scenarios.md#scenario-3-openrouter--claude-code-delegation) for the verified end-to-end walkthrough, including the `apiProvider: "firstParty"` billing evidence that explains why subprocess calls use your subscription rather than Extra usage.
 
 ---
 
