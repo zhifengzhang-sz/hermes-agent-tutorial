@@ -86,6 +86,7 @@ Two paths:
 ### Reference
 
 - [Hermes vs. Claude Code — Honest Comparison](docs/hermes-vs-claude-code.md) — if you already use Claude Code, read this first
+- [LLM Provider Scenarios](docs/llm-provider-scenarios.md) — three end-to-end setups (Ollama / OpenRouter / OpenRouter + Claude Code delegation), each tested on a real install with findings documented
 
 ### Examples
 
