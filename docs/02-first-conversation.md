@@ -46,7 +46,7 @@ These aren't in the welcome banner, but you'll want them immediately:
 | `Alt+Enter` or `Ctrl+J` | New line (multiline input) |
 | `Ctrl+V` | Paste an image from clipboard (vision) |
 | `Ctrl+C` | Interrupt the current task |
-| `/` then `Tab` | Autocomplete of slash commands |
+| `Tab` (after `/`) | Autocomplete slash commands |
 | `Ctrl+B` | Start a voice recording (if `voice` extra is installed) |
 
 The interrupt behavior is the one most people miss: **you don't have to wait for Hermes to finish**. Type a new message and press Enter — it cancels the current task and switches to your new instructions mid-turn.

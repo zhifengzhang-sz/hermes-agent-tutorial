@@ -116,14 +116,20 @@ Common causes:
 
 ### Claude Code sub-agent hangs
 
-If you delegated to Claude Code (chapter 8) and it seems stuck:
+If you delegated to Claude Code (chapter 8) and it seems stuck, first disambiguate *which* permission gate is blocking:
+
+- **Hermes's own gate** — the `gateway.auto_approve` setting (see [chapter 6](06-messaging-gateways.md#auto-approve-mode)). Affects Hermes itself pausing before side-effectful tool calls when driven from a messaging platform. Fix: either set `gateway.auto_approve true`, or reply on the gateway you're using.
+- **Claude Code's own permission dialog** — the prompt `claude` shows on first launch, or the "bypass permissions warning" that comes up with `--dangerously-skip-permissions`. Entirely separate from Hermes's gate, handled by sending keys to the tmux session.
+
+Assuming it's the Claude Code dialog:
 
 1. In a separate terminal: `tmux ls` — see if the session is still there
 2. `tmux attach -t claude-<name>` — see what Claude Code is actually doing
-3. If it's waiting on the permission dialog, send `Down` then `Enter`
-4. If it's mid-edit on a large file, just wait
+3. **Workspace trust dialog** (first visit to a directory) — default is correct, send `Enter`
+4. **Bypass permissions warning** (only with `--dangerously-skip-permissions`) — default is wrong ("No, exit"), send `Down` then `Enter`
+5. If it's mid-edit on a large file, just wait
 
-For print-mode runs, there's no tmux session — check `~/.claude/logs/` for the most recent run.
+For print-mode runs, there's no tmux session (print mode skips all dialogs) — check `~/.claude/logs/` for the most recent run.
 
 ---
 

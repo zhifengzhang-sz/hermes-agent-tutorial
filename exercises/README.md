@@ -86,17 +86,26 @@ Quit. Start a fresh session. Ask: *"Scaffold a new API for me."* Verify Hermes p
 
 ### Exercise 2.3 — Audit the Auto-Skill Loop
 
-**Goal:** observe the learning loop creating a skill without your direct instruction.
+**Goal:** observe the skill-creation nudge fire in a real session and see what (if anything) the agent decides to write. Before starting, skim [chapter 4's "Learning Loop"](../docs/04-tools-and-skills.md#the-learning-loop--what-it-actually-is) so you're evaluating the right thing — it's a periodic prompt injection, not actual model learning.
 
-Walk through the same workflow three times in separate sessions. Examples:
+Turn down the nudge interval so you don't have to sit through the default of 10 turns. In `~/.hermes/config.yaml`:
+
+```yaml
+skills:
+  creation_nudge_interval: 3
+```
+
+Then walk through the same workflow three times in separate sessions. Examples:
 - Three times: "set up a new Vite + React + Tailwind project in `~/tmp/test-N`"
 - Three times: "deploy the current branch to staging"
 
-After the third run, Hermes should either propose writing a skill or write one silently. Check `~/.hermes/skills/` for new folders.
+After a few turns past the third run, the model should see a nudge prompt and may (or may not) call the `skill_manager` tool to write a SKILL.md. Check `~/.hermes/skills/` for new folders.
 
-**Success criteria:** a new skill file appears that captures your workflow.
+**Success criteria:** a new skill file appears, OR you observe the nudge fire in the session transcript and the model explicitly decide against writing one.
 
-**If it doesn't fire:** force it with `/skill create` and walk through the wizard based on the current session.
+**Things to notice:** the nudge is LLM-driven. A weaker model may skip the reminder or produce a thin skill. A stronger model may write something useful. Either way, revert `creation_nudge_interval` to something saner (10 or higher) after this exercise.
+
+**If no nudge fires at all:** force skill creation with `/skill create` and walk through the wizard based on the current session.
 
 ---
 

@@ -135,7 +135,7 @@ For a worked example, see [`examples/telegram-morning-briefing/`](../examples/te
 
 ## Gotchas
 
-1. **Task output goes to your delivery channel, not back to a CLI session.** If you run `hermes cron run` manually, output prints to stdout; when the scheduler fires it, output is routed by `delivery.channel`.
+1. **Task output goes to your delivery channel, not back to a CLI session.** If you run `hermes cron run` manually, output prints to stdout; when the scheduler fires it, output is routed by the job's `deliver` field.
 2. **Long tasks block the scheduler thread.** For tasks that take >1 minute, consider `/background` from the task prompt, or run them in Docker backend.
 3. **Timezone is your server's local time.** Explicitly set `TZ` in the systemd unit or `.env` if the server is on UTC and you want Pacific mornings.
 4. **The gateway must be running**, but missed runs don't accumulate. If a recurring job's scheduled time is more than one period in the past (e.g. an hourly job missed several hours), the scheduler fast-forwards it to the *next future* run instead of replaying the backlog. Only jobs whose due time sits inside the current period fire on the next tick (source: `cron/jobs.py` → `get_due_jobs()`).

@@ -16,7 +16,7 @@ Supported platforms out of the box:
 - **WhatsApp** — via Baileys bridge (Node deps required)
 - **Signal** — via `signal-cli`
 - **Email** — for async / batch workflows
-- **Home Assistant** — for smart-home triggers
+- **Home Assistant** — for smart-home triggers (if you run Home Assistant on your network, Hermes can call services and read entity states as native tools, and can be reached via HA automations; configuration is outside this tutorial's scope — see the [official Home Assistant docs for Hermes](https://hermes-agent.nousresearch.com/docs/user-guide/messaging-gateways/homeassistant) for setup)
 
 All of them run under a single `hermes gateway` process — one command, many surfaces.
 

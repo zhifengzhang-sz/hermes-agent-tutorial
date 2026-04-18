@@ -30,6 +30,18 @@ hermes config check            # validate config
 hermes config migrate          # update schema after an upgrade
 ```
 
+**Authenticate (credential pools)**
+```bash
+hermes auth                    # interactive pool management wizard
+hermes auth list               # show all credential pools and which is active
+hermes auth list <provider>    # show a single provider's pool
+hermes auth add <provider>     # add a credential (API key or OAuth)
+hermes auth remove <provider> <index>
+hermes auth reset <provider>   # clear cooldowns / exhaustion status
+```
+
+`hermes auth list` is the authoritative view for pool-based credentials (including OAuth tokens auto-imported from `~/.claude/.credentials.json`). `hermes status`'s "API Keys" section only surfaces `.env`-based key vars, so use `hermes auth list` if you're wondering whether a Claude Code login was picked up. Details in [chapter 1](01-installation.md#i-already-use-claude-code--do-i-need-a-separate-key).
+
 **Messaging + scheduling**
 ```bash
 hermes gateway setup           # configure Telegram/Discord/Slack/WhatsApp/etc.
@@ -49,6 +61,8 @@ hermes version                 # print version
 ```bash
 hermes claw migrate            # import an existing OpenClaw setup
 ```
+
+(OpenClaw was Hermes's predecessor — Nous Research's earlier autonomous-agent project. Only relevant if you were already running it; skip this command otherwise.)
 
 ---
 

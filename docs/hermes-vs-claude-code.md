@@ -45,9 +45,9 @@ If you're already a Claude Code user, the most defensible reason to run Hermes i
 
 > **Hermes is the orchestrator and interface. Claude Code is the specialist sub-agent.**
 
-Concretely: you chat with Hermes from Telegram, Hermes plans the work, and when the work is coding-heavy it spawns `claude -p "..."` as a subprocess to do the actual implementation. The Claude Code subprocess runs against your existing Claude subscription quota (because to Anthropic's API it's Claude Code making the call, not a third-party app — see [chapter 1](01-installation.md#i-already-use-claude-code--do-i-need-a-separate-key) for the billing reasoning). Hermes itself runs on a cheap non-Anthropic model via OpenRouter or similar, since the orchestration work doesn't need frontier-tier reasoning.
+Concretely: you chat with Hermes from Telegram, Hermes plans the work, and when the work is coding-heavy it spawns `claude -p "..."` as a subprocess to do the actual implementation. When you invoke `claude` yourself from a shell, calls go against your Claude Code subscription. A subprocess invocation from Hermes *should* present itself to Anthropic's API the same way — same binary, same auth token in `~/.claude/.credentials.json`, same request headers — but this tutorial has **not** verified that empirically, and the related third-party-app billing wall ([chapter 1](01-installation.md#i-already-use-claude-code--do-i-need-a-separate-key)) means the question isn't purely academic. Before building a workflow around this pattern, run one `claude -p "test"` via Hermes and check claude.ai/settings/usage to confirm the spend landed against your subscription rather than Extra usage. Hermes itself is then best run on a cheap non-Anthropic model via OpenRouter or similar, since orchestration work usually doesn't need frontier-tier reasoning.
 
-That pipeline — chat-to-agent from anywhere → plan → delegate heavy coding to Claude Code → notify back on your messaging channel — is real and not replicable with either tool alone.
+That pipeline — chat-to-agent from anywhere → plan → delegate heavy coding to Claude Code → notify back on your messaging channel — is real and not replicable with either tool alone, *provided the billing assumption holds on your account*.
 
 ## When Hermes isn't worth it
 

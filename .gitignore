@@ -26,7 +26,6 @@ yarn-debug.log*
 .env.local
 *.pem
 *.key
-~/.hermes/
 
 # Local drafts and scratch
 /draft/

@@ -38,7 +38,6 @@ These claims come from third-party sources. They're flagged inline where they ap
 |---|---|---|
 | `/compress` preserves the first 3 and last 4 turns | [05](docs/05-memory-and-context.md) | Official Hermes CLI reference — cited inline |
 | 6–8K CLI tokens / 15–20K Telegram tokens per turn | [03](docs/03-cli-essentials.md), [05](docs/05-memory-and-context.md) | [NxCode community tutorial](https://www.nxcode.io/resources/news/hermes-agent-tutorial-install-setup-first-agent-2026) |
-| Auto-skill loop fires roughly every 15 tool calls | [04](docs/04-tools-and-skills.md) | Third-party writeup — specific cadence unverified |
 
 ## ❓ Still needs a clean-VM pass
 
@@ -49,6 +48,7 @@ These claims are behavior-level and couldn't be validated from reading source al
 - The `/background <task>` parallel session mechanic
 - Gateway auto-approve semantics and what happens when a destructive tool call fires from Telegram
 - The Claude Code interactive-mode tmux orchestration trace in [ch.8](docs/08-claude-code-integration.md) — specifically, the exact `send-keys`/`capture-pane` loop the bundled skill uses
+- **Whether a `claude` subprocess spawned by Hermes bills against the user's subscription (as a direct `claude` invocation would) or against the third-party-app "Extra usage" bucket.** Central to the complementary pattern in [hermes-vs-claude-code.md](docs/hermes-vs-claude-code.md); currently framed as an expectation, not a verified fact. Trivial to check on a real install: run one `claude -p "test"` via Hermes, then inspect claude.ai/settings/usage.
 - Installer idempotency and the Termux fallback path
 - Image paste (`Ctrl+V`) and voice (`Ctrl+B`) key bindings on Linux, macOS, and Termux
 

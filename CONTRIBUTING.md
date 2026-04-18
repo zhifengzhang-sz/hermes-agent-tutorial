@@ -50,7 +50,7 @@ This matters more than almost anything else. A tutorial with broken commands is 
 
 ## Questions
 
-Open a [GitHub Discussion](https://github.com/<your-fork>/hermes-agent-tutorial/discussions) or ping in the [Nous Research Discord](https://discord.gg/NousResearch).
+Open a [GitHub Discussion](https://github.com/zhifengzhang-sz/hermes-agent-tutorial/discussions) or ping in the [Nous Research Discord](https://discord.gg/NousResearch).
 
 ---
 
