@@ -257,7 +257,7 @@ Useful for laptop setups where you sometimes work offline and sometimes not. Pri
 **Any scenario + Claude Code delegation**
 The `claude` subprocess (scenario 3's delegation) cares only about its own auth, not what model Hermes itself is running on. So scenario 1 (Ollama orchestrator) + Claude Code subprocess = "fully offline until I need Claude Code, then I reach out for just that one task." This is particularly useful if your Ollama hardware is beefy enough for orchestration but not for coding work.
 
-See [chapter 3's `hermes auth` commands](03-cli-essentials.md#authenticate-credential-pools) for pool management, and the official [credential pools doc](https://hermes-agent.nousresearch.com/docs/user-guide/features/credential-pools) for rotation strategies and fallback configuration.
+See [chapter 3's `hermes auth` command family](03-cli-essentials.md#the-command-families) for pool management, and the official [credential pools doc](https://hermes-agent.nousresearch.com/docs/user-guide/features/credential-pools) for rotation strategies and fallback configuration.
 
 ---
 

@@ -62,6 +62,7 @@ Two paths:
 | I want to... | Start here |
 |---|---|
 | Just get it running | [01 — Installation](docs/01-installation.md) |
+| Pick an LLM provider (Ollama / OpenRouter / Claude Code delegation) | [LLM Provider Scenarios](docs/llm-provider-scenarios.md) |
 | Understand the CLI | [03 — CLI Essentials](docs/03-cli-essentials.md) |
 | Write my own skill | [04 — Tools & Skills](docs/04-tools-and-skills.md) |
 | Use Hermes from my phone | [06 — Messaging Gateways](docs/06-messaging-gateways.md) |
