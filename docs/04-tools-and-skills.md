@@ -39,7 +39,7 @@ Each skill is a folder under `~/.hermes/skills/` containing at minimum a `SKILL.
 
 ## The "Learning Loop" — What It Actually Is
 
-Hermes's README calls this a **"built-in learning loop"** and pitches the agent as *"self-improving."* Both phrases overstate what the system does, and it's worth being direct about it before you evaluate the feature.
+Hermes Agent's [upstream README](https://github.com/NousResearch/hermes-agent) calls this a **"built-in learning loop"** and pitches the agent as *"self-improving."* Both phrases overstate what the system does, and it's worth being direct about it before you evaluate the feature. (This tutorial's own README doesn't use those phrases — this callout is correcting upstream's framing, not the tutorial's.)
 
 **What does not happen.** Model weights never change. There is no fine-tuning, no RLHF, no gradient update, no continual pre-training. The LLM you point Hermes at is bit-for-bit the same LLM after any number of sessions. Whatever "learning" means in ML, that isn't happening here.
 

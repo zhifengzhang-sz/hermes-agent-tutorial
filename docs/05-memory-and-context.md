@@ -22,7 +22,7 @@ You don't have to teach Hermes to remember — it does it proactively. After too
 
 Unlike the session-search index, memory is **not** retrieved dynamically per-turn. The entire `MEMORY.md` + `USER.md` content is injected into the system prompt as a frozen snapshot at session start, and the model works from that. If you edit the files after a session has already started, the session won't see the change until it's restarted.
 
-Hermes's README frames this as part of a "closed learning loop." The honest description is narrower: **it's prompt-driven file curation, not model learning.** The LLM's weights never change; the agent just periodically writes (and later re-reads) plain markdown files. See [chapter 4](04-tools-and-skills.md#the-learning-loop--what-it-actually-is) for the full mechanism. It's a useful workflow — a curated `MEMORY.md` grows into something like a persistent scratchpad across sessions — but it's context management, not learning.
+Hermes Agent's [upstream README](https://github.com/NousResearch/hermes-agent) frames this as part of a "closed learning loop." The honest description is narrower: **it's prompt-driven file curation, not model learning.** The LLM's weights never change; the agent just periodically writes (and later re-reads) plain markdown files. See [chapter 4](04-tools-and-skills.md#the-learning-loop--what-it-actually-is) for the full mechanism. It's a useful workflow — a curated `MEMORY.md` grows into something like a persistent scratchpad across sessions — but it's context management, not learning.
 
 Sources: `tools/memory_tool.py` for the file format; `run_agent.py:1259` for the memory-nudge interval.
 

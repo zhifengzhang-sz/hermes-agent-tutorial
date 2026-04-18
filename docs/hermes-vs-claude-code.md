@@ -31,7 +31,7 @@ These are verified features (either against the Hermes source or against a live 
 
 ## What the marketing overclaims (worth knowing before you buy in)
 
-Hermes's README bills it as a *"self-improving AI agent"* with a *"built-in learning loop."* In practice, the "learning loop" is periodic prompt nudges that ask the LLM to write skill and memory files — see [chapter 4](04-tools-and-skills.md#the-learning-loop--what-it-actually-is) for the full mechanism, or skim the key points:
+Hermes Agent's [upstream README](https://github.com/NousResearch/hermes-agent) bills it as a *"self-improving AI agent"* with a *"built-in learning loop."* In practice, the "learning loop" is periodic prompt nudges that ask the LLM to write skill and memory files — see [chapter 4](04-tools-and-skills.md#the-learning-loop--what-it-actually-is) for the full mechanism, or skim the key points:
 
 - **No model weights change.** No fine-tuning, no RLHF, no training of any kind.
 - **What happens:** every ~10 turns, Hermes injects a reminder prompt; the LLM may or may not write a file; saved files are re-injected into future sessions' context.

@@ -193,15 +193,22 @@ rm -f /etc/systemd/system/hermes-gateway.service
 # 2. Remove the symlink
 rm -f ~/.local/bin/hermes
 
-# 3. Remove all state AND the code checkout
+# 3. Remove all state AND the one-line-installer's code checkout.
 #    The installer defaults to placing the checkout at ~/.hermes/hermes-agent
-#    (source: scripts/install.sh), so this single rm covers both data and code.
+#    (source: scripts/install.sh), so this single rm covers both data and code
+#    for users who followed the one-line installer path in chapter 1.
 #    BACK THIS UP FIRST if you might come back — see the backup section above.
 rm -rf ~/.hermes
 
-# 4. If you passed --dir to the installer to put the checkout elsewhere,
-#    remove that path too:
-# rm -rf /your/custom/path
+# 4. If you have a Hermes checkout OUTSIDE ~/.hermes/ — either because you
+#    followed the manual install in chapter 1 and cloned somewhere else, or
+#    because you passed --dir / HERMES_INSTALL_DIR to customize — remove
+#    that separately. Common locations to check:
+#      ~/hermes-agent       (typical manual-install spot)
+#      ~/code/hermes-agent  (if you clone under ~/code/)
+#      ~/dev/hermes-agent
+#    Uncomment and adjust:
+# rm -rf ~/hermes-agent
 ```
 
 Step 3 is the destructive one. If you want to keep your memories and skills for a future reinstall, archive `~/.hermes/memories/` and `~/.hermes/skills/` before deleting.
