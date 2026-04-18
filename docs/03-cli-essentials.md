@@ -116,23 +116,41 @@ Secrets (API keys) live in a separate `~/.hermes/.env` so you can commit `config
 
 ---
 
-## Slash Commands (full list)
+## Slash Commands (essentials)
 
-In-session commands start with `/`. Beyond the basics in chapter 2, useful ones are:
+In-session commands start with `/`. This is the subset you'll reach for day-to-day — the tutorial doesn't attempt a complete inventory because upstream adds commands regularly. For the authoritative current list, type `/` and press Tab in a session, or see the ["CLI vs Messaging Quick Reference" table in the upstream README](https://github.com/NousResearch/hermes-agent#cli-vs-messaging-quick-reference).
+
+**Session management:**
+
+| Command | What it does |
+|---|---|
+| `/new` or `/reset` | Start a fresh conversation |
+| `/retry`, `/undo` | Retry or rewind the last turn |
+| `/title "new name"` | Rename session |
+| `/quit` | Exit cleanly |
+
+**Context and memory:**
 
 | Command | What it does |
 |---|---|
 | `/compress` | Summarize middle turns; preserve first 3 + last 4 |
 | `/memory add "note"` | Force a fact into persistent memory |
 | `/memory search "query"` | Recall past memories |
+| `/usage`, `/insights [--days N]` | Inspect token/cost usage |
+
+**Tooling and model:**
+
+| Command | What it does |
+|---|---|
 | `/skill list` | Show installed skills |
 | `/skill create` | Interactive skill authoring |
 | `/model` | Switch model mid-conversation |
-| `/title "new name"` | Rename session |
+| `/personality [name]` | Switch to a built-in personality (see SOUL.md section below) |
 | `/verbose` | Cycle tool output display |
 | `/voice tts` | Have Hermes speak its replies |
 | `/background <task>` | Spawn parallel agent |
-| `/quit` | Exit cleanly |
+
+Messaging gateways have a few additional commands (`/stop`, `/platforms`, `/status`, `/sethome`) that only apply when Hermes is running under `hermes gateway` — covered in [chapter 6](06-messaging-gateways.md).
 
 Every installed skill also registers its own slash command — so if you install a skill called `github-pr-workflow`, you'll get `/github-pr-workflow` for free.
 
@@ -140,7 +158,7 @@ Every installed skill also registers its own slash command — so if you install
 
 ## Personalities & SOUL.md
 
-Hermes has a concept of a **personality** — a system prompt layer that shapes tone and defaults. The built-in one lives in the repo and is applied automatically; you can override it per-session or per-project by creating a `SOUL.md` file.
+Hermes has a concept of a **personality** — a system prompt layer that shapes tone and defaults. Hermes ships a few built-in personalities you can switch between with `/personality [name]` (run `/personality` with no argument to see what's available). If none of them fit, you can override with your own by creating a `SOUL.md` file:
 
 ```markdown
 # ~/.hermes/SOUL.md
@@ -150,7 +168,7 @@ Prefer concise answers. Never fabricate citations.
 When unsure, run a web search rather than guess.
 ```
 
-Per-project overrides go in `./SOUL.md` at the root of whatever directory you launch `hermes` from — it's loaded automatically.
+Per-project overrides go in `./SOUL.md` at the root of whatever directory you launch `hermes` from — it's loaded automatically. So the escalation path is: built-in personality → `/personality [name]` to pick a different built-in → `SOUL.md` for a custom override.
 
 ---
 
