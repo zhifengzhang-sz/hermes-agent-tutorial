@@ -2,7 +2,7 @@
 
 This tutorial makes factual claims about Hermes Agent's internals, configuration, and behavior. Not all of them are equally grounded. This file is the honest ledger of which is which, so readers can tell apart "checked against the source" from "sourced from a third-party writeup" from "educated guess."
 
-Updated: **2026-04-17**.
+Updated: **2026-04-18**.
 
 ---
 
